@@ -1,3 +1,108 @@
+# OA3 - Text Preprocessing Web Service
+
+# What this project does
+
+This project is a web application that works with plain-text books from Project Gutenberg.
+
+You give the app a `.txt` URL from Project Gutenberg, and it will:
+
+1. Download the text
+2. Remove some of the Project Gutenberg header and footer material
+3. Calculate a few basic text statistics
+4. Create a short summary using the first few sentences
+
+The app also has a second API endpoint that can analyze raw text directly instead of downloading it from a URL.
+
+----------------
+
+# Main features
+
+This app can:
+
+- Fetch a Project Gutenberg `.txt` file from a URL
+- Clean the text
+- Count characters, words, and sentences
+- Calculate average word length
+- Calculate average sentence length
+- List the most common words from the text
+- Create a simple 3-sentence summary
+- Display the results in a browser
+
+------------------------
+
+# Files in this project
+
+# starter_preprocess.py
+This file contains the text-processing code.
+
+It is responsible for:
+- Downloading text from a URL
+- Cleaning Gutenberg text
+- Normalizing text
+- Calculating statistics
+- Creating a simple summary
+
+# app.py
+This file runs the Flask web application.
+
+It defines the main routes:
+- `/` for the browser interface
+- `/health` for checking whether the app is running
+- `/api/clean` for downloading and cleaning text from a URL
+- `/api/analyze` for analyzing raw text directly
+
+# templates/index.html
+This is the web page the user sees in the browser.
+
+It includes:
+- a place to paste a Gutenberg URL
+- a submit button
+- loading and error messages
+- a section to display results.
+
+# requirements.txt
+This lists the Python packages needed to run the project.
+
+------------------
+
+## How to run this project in GitHub Codespaces
+
+# Step 1: Open the project in Codespaces
+
+# Step 2: Install the required packages
+In the terminal, run:
+
+```bash
+python -m pip install -r requirements.txt
+
+# Step 3: Start the web app
+```bash
+python app.py
+
+# Step 4: Open the app in your browser
+
+After the server starts, Codespaces should show that the app is running on port 5000. Open that forwarded port in your browser. You should then see the Gutenberg Text Cleaner interface.
+
+# Step 5: try these Project Gutenberg text files:
+
+Pride and Prejudice
+https://www.gutenberg.org/files/1342/1342-0.txt
+Frankenstein
+https://www.gutenberg.org/files/84/84-0.txt
+Alice in Wonderland
+https://www.gutenberg.org/files/11/11-0.txt
+Moby Dick
+https://www.gutenberg.org/files/2701/2701-0.txt
+
+___________________________________________________________________________________________________________
+
+## Here are my screenshots!
+### Test setup
+![Test setup](test_setup_output.png)
+
+### Working application
+![Working application](working_application_Quarles.png)
+
 # CSE 510 Warm-Up Assignment: Text Preprocessing Web Service
 
 Welcome to the warm-up assignment for CSE 510! This assignment will help you get familiar with text preprocessing, web development with Flask, and working with Project Gutenberg texts before diving into the main Shannon Information Theory assignment.
